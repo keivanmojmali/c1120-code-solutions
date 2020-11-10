@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+  <html lang="en">
+
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>HTML Forms</title>
+    </head>
+
+    <body>
+
+
+      <h1> Coding Form!</h1>
+
+      <form action="" method="get">
+        <label>
+          <legend>
+            Email
+          </legend>
+          <div>
+            <input type="text" name="email" maxlength="50">
+          </div>
+        </label>
+        <label>
+          <legend> Why is coding cool?</legend>
+          <div>
+            <select name="why is coding cool?">
+              <option value="future">It is the future</option>
+              <option value="interesting">Because it is interesting</option>
+              <option value="fun">Becuase it is fun</option>
+              <option value="powerful">Becuase it is powerful</option>
+            </select>
+          </div>
+        </label>
+        <label>
+          <legend>
+            Favorite Language (Choose one)
+          </legend>
+          <div>
+            <input type="radio" name="language" value="HTML" checked="checked"> HTML
+            <input type="radio" name="language" value="CSS" checked="checked"> CSS
+            <input type="radio" name="language" value="JavaScript" checked="checked"> Javascript
+          </div>
+        </label>
+        <label>
+          <legend>
+            Would you like to sign up for more information?
+          </legend>
+          <div>
+            <input type="checkbox" name="signup" value="moreinfo" checked="checked"> Sign me up!
+          </div>
+        </label>
+        <label>
+          <legend>
+            Comments
+          </legend>
+          <div>
+            <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+          </div>
+        </label>
+        <div>
+          <input type="submit" name="fullform" value="Submit">
+        </div>
+      </form>
+
+
+    </body>
+
+</html>
