@@ -5,7 +5,6 @@
   max-width: 900px;
 }
 
-
 .nav {
   position: relative;
   height: 40px;
@@ -73,6 +72,14 @@ hr {
   font-weight: bold;
 }
 
+.s1product {
+  margin-top: 40px;
+  position: relative;
+  color: white;
+  font-weight: bold;
+}
+
+
 .s1 h1 {
   position: absolute;
   left: 4rem;
@@ -82,6 +89,7 @@ hr {
   font-weight: normal;
 }
 
+
 .s1 p {
   position: absolute;
   left: 4rem;
@@ -90,6 +98,27 @@ hr {
   font-style: normal;
   font-weight: 500;
 }
+
+
+.headertext h1 {
+  position: absolute;
+  left: 3rem;
+  top: 9rem;
+  font-family: 'Tiempos Headline';
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+.headertext p {
+  position: absolute;
+  left: 3rem;
+  top: 15.5rem;
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 500;
+}
+
 
 .s1 a {
   position: absolute;
@@ -128,6 +157,14 @@ hr {
   color: #6E6E6E;
 }
 
+.s2-no-gray {
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  color: #6E6E6E;
+}
+
 .row {
   flex-basis: 100%;
   display: flex;
@@ -135,11 +172,78 @@ hr {
   margin: 30px 30px;
 }
 
+.row-product {
+  flex-basis: 100%;
+  display: flex;
+text-align: left;
+}
+
+.column-half-product > img {
+  width: 100%;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.italic-product {
+  font-style: italic;
+  font-weight: 600;
+}
+
 .column-half {
   flex-basis: 50%;
   text-align: center;
   font-size: 16px;
   margin-bottom: 20px;
+}
+
+#padding-left {
+  padding-left: 55px;
+}
+
+.column-half-product * {
+  margin: 23px 10px;
+}
+
+.column-half-product {
+  flex-basis: 50%;
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-content: center;
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 500;
+}
+
+.column-half-product p {
+  font-size: 12px;
+  font-family: 'Avenir';
+
+}
+
+.column-half-product > h2 {
+  padding-top: 52px;
+
+}
+
+#quote {
+  font-size: 14px;
+}
+
+.column-half-product > h2 {
+  font-family: 'Tiempos Headline';
+  font-weight: normal;
+}
+
+
+
+.blue-link {
+  color: blue;
+  opacity: 80%;
+  text-decoration: none;
 }
 
 .column-full {
@@ -156,6 +260,9 @@ hr {
   justify-content: space-between;
   align-content: center;
   height: 118px;
+  width: 100%;
+  background-color: white;
+
 }
 
 .s3button {
@@ -180,6 +287,7 @@ hr {
   flex-wrap: wrap;
   background-color: #525351;
   height: 350px;
+  width: 100%;
 }
 
 .column-fourths {
@@ -240,13 +348,14 @@ hr {
   height: 100px;
   display: flex;
   margin: 20px;
+  width: 100%;
 }
 
 .footer a {
   margin: 12px;
   font-family: 'Avenir';
   font-style: normal;
-  font-weight: 500;
+  font-weight: bold;
   color: #808080;
   text-decoration: none;
   justify-content: flex-start;
