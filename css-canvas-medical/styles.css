@@ -100,6 +100,7 @@ hr {
 }
 
 
+
 .headertext h1 {
   position: absolute;
   left: 3rem;
@@ -109,6 +110,36 @@ hr {
   font-weight: normal;
 }
 
+.imp-header h1 {
+  position: absolute;
+  left: 3rem;
+  top: 7rem;
+  font-family: 'Tiempos Headline';
+  font-style: normal;
+  font-weight: normal;
+  z-index: 6;
+}
+
+.imp-header p {
+  position: absolute;
+  left: 3rem;
+  top: 16em;
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 500;
+  z-index: 6;
+}
+
+
+.imp-heading {
+  position: relative;
+}
+
+.flex-row {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
 
 .headertext p {
   position: absolute;
@@ -144,8 +175,9 @@ hr {
 .blur {
   width: 900px;
   height: 506.25px;
-  background: linear-gradient(transparent, rgba(0,0,0,.5));
+  background: linear-gradient(transparent, rgba(0,0,0,.4));
   position: absolute;
+  z-index: 5;
 
 }
 
@@ -171,6 +203,49 @@ hr {
   flex-wrap: wrap;
   margin: 30px 30px;
 }
+
+.imp-row {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px 30px;
+  align-content: center;
+  justify-content: center;
+}
+
+.imp-row h3 {
+  flex-basis: 100%;
+  font-size: 19px;
+  font-family: 'Avenir';
+  font-weight: 300;
+  color: #6E6E6E;
+  margin: ;
+}
+
+.imp-row p {
+  font-size: 16px;
+  font-family: 'Avenir';
+  font-weight: 400;
+  color: #6E6E6E;
+
+}
+
+.c-full-imp > h1 {
+  font-family: 'Tiempos Headline';
+  font-style: normal;
+  font-weight: normal;
+  color: #6E6E6E;
+  font-size: 30px;
+  margin-top: 55px;
+}
+
+.large {
+  font-size: 30px;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+
 
 .row-product {
   flex-basis: 100%;
