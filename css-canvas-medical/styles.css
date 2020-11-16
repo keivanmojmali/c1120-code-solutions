@@ -189,6 +189,19 @@ hr {
   font-size: 14px;
 }
 
+.column-thirds-about {
+  text-align: center;
+
+}
+
+.column-thirds-about p {
+  font-family: 'Avenir', 'Times New Roman', Times;
+  color: #B3B3B3;
+  font-size: 13px;
+
+}
+
+
 .imp-heading {
   position: relative;
 }
@@ -264,13 +277,20 @@ hr {
 .about-row {
   flex-basis: 100%;
   display: flex;
-  flex-wrap: wrap;
+
   margin: 30px 30px;
   justify-content: center;
   align-content: center;
 }
 
+.row-about {
+  flex-basis: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
 
+}
+}
 
 
 
@@ -402,10 +422,30 @@ text-align: left;
 .column-full {
   flex-basis: 100%;
   text-align: center;
+  color: #50514F;
 }
 
 .column-full h3 {
   font-size: 30px;
+}
+
+.column-full h1 {
+  font-size: 28px;
+  font-family: 'Tiempos Headline';
+  font-weight: 550;
+
+}
+
+.column-full-about {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+}
+
+.column-full-about p {
+  flex-basis: 100%;
 }
 
 .s3 {
