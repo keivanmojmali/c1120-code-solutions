@@ -1,5 +1,6 @@
-colors =  ['red', 'white', 'blue'];
 var colors;
+colors =  ['red', 'white', 'blue'];
+
 
 console.log('value of colors [0]:',colors[0]);
 console.log('value of colors[1]:',colors[1]);
@@ -13,8 +14,9 @@ console.log('Mexico is' + " " + colors[0] + "," + colors[1] + " and " + colors[2
 
 console.log(colors);
 
-students = [ 'Mike','Joe','Frank','Jason'];
 var students;
+students = [ 'Mike','Joe','Frank','Jason'];
+
 
 var numberOfStudents = students.length
 console.log('number of students in the class:',numberOfStudents);
