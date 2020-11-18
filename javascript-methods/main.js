@@ -22,15 +22,15 @@ console.log('Value of randomHero: ',randomHero);
 
 
 var library = [
-  book1 = {
+  {
     title:'In Search of Lost Time',
     author: 'Marcel Proust',
   } ,
-  book2 = {
+  {
     title: 'Ulysses',
     author: 'James Joyce',
   },
-  book3 = {
+  {
     title: 'Don Quixote',
     author: 'Miguel de Cervantes',
   }
@@ -44,7 +44,7 @@ console.log('Value of lastBook',lastBook);
 var firstBook = library.shift();
 console.log('Value of firstBook',firstBook);
 
-var years = {
+var one = {
   title: 'One Hundred Years of Solitude',
   author: 'Gabriel Garcia Marquez',
 };
@@ -54,9 +54,9 @@ var warPeace = {
   author:'Leo Tolstoy',
 };
 
-library.push(years);
+library.push(one);
 library.unshift(warPeace);
-library.splice(1);
+library.splice(1,1);
 console.log('value of final array: ',library);
 
 var fullName = 'Keivan Mojmali';
