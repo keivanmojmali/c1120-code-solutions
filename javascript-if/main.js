@@ -21,11 +21,11 @@ function startsWithJ(string) {
 };
 
 function isOldEnoughToDrink(person) {
-  return person > 21;
+  return person.age > 21;
 };
 
 function isOldEnoughToDrive(person) {
-  return person > 16;
+  return person.age > 16;
 };
 
 function isOldEnoughToDrinkAndDrive(person) {
@@ -37,7 +37,7 @@ function categorizeAcidity(pH) {
     console.log('neutral');
   } else if(pH < 7) {
     console.log('acid');
-  } else if ((pH > 7) && (pH > 14)) {
+  } else if ((pH > 7) && (pH < 14)) {
     console.log('base');
   } else {
     console.log('invalid pH level');
@@ -55,4 +55,9 @@ function introduceWarnerBro(name) {
   } else {
     console.log("Goodnight everybody!");
   }
+};
+
+var Keivan = {
+  name:'Keivan Mojmali',
+  age: 28,
 };
