@@ -241,14 +241,16 @@ hr {
   border-radius: 3px;
   box-shadow: none;
   font-size: 16px;
+  margin-right: 40px;
 }
 
 .blur {
   width: 900px;
   height: 506.25px;
-  background: linear-gradient(transparent, rgba(0,0,0,.4));
+  background: linear-gradient(transparent, rgba(0,0,0,.2.5));
   position: absolute;
   z-index: 5;
+
 
 }
 
@@ -469,6 +471,7 @@ text-align: left;
   color: #6E6E6E;
   font-size: 16px;
   align-self: center;
+  margin-left: 40px;
 }
 
 .s3text h3 {
@@ -502,7 +505,8 @@ text-align: left;
 }
 
 .smallwhite {
-  width: 50%;
+  width: 58%;
+  margin-bottom: 25px;
 }
 
 .column-fourths {
