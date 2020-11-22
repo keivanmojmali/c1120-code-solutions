@@ -2,13 +2,13 @@
 
 function numVowels(string) {
   var number = [];
-  var nL = number.length
+  var arr = string;
   for(i = 0; i < string.length; i++) {
-    if(string[i] === 'A' || 'A') {
-      number.push(string[i]);
-    }
+    if(arr[i] === 'A' || arr[i] === 'a' || arr[i] === 'E' || arr[i] === 'e'||
+     arr[i] === 'I' || arr[i] === 'i' || arr[i] === 'O' || arr[i] === 'o' ||
+     arr[i] === 'u' || arr[i] === 'U') {
+      number.push(arr[i]);
   }
-  console.log(string[3]);
-  return nL;
-
+}
+  return number.length;
 }
