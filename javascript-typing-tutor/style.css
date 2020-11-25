@@ -1,0 +1,75 @@
+.container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.sentence {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.inline-div {
+  display: inline;
+  margin: 0 8px 0 8px;
+  align-self: center;
+  font-family: 'comic sans ms', 'ariel black', times;
+
+}
+
+span {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.green {
+ color: #26CF28;
+}
+
+.red {
+  color: red;
+}
+
+.underline {
+  padding-bottom: 5px;
+  border-bottom-style: solid;
+}
+
+#width {
+  width: 6px;
+}
+
+.off {
+  display: none;
+}
+
+.on {
+display: block;
+ width:900px;
+ height:500px;
+ margin:0 auto;
+ background:#f7f7f7;
+ position:absolute;
+ left:33%;
+ top:50%;
+ margin-left:-250px;
+ margin-top:-250px;
+text-align: center;
+background-color: lightblue;
+opacity: 70%;
+}
+
+.button {
+  height: 50px;
+  width: 250px;
+  background-color: white;
+  color: #black;
+  font-size: 22px;
+  font-weight:bold;
+  font-family: 'comic sans ms'Arial, Helvetica, sans-serif;
+  margin: 0 10px 0 10px;
+  position
+}
