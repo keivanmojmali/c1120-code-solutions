@@ -1,27 +1,27 @@
 var spanIndex = 0;
 var $harp = document.querySelectorAll('span');
-var $keyHold = [];
-var $try = document.querySelector('.off');
+var keysCount = 0;
+var $try = document.querySelector('#try');
 var $tryText = document.querySelector('.count-words');
-var score = $harp.length / $keyHold.length
+var $harpLength = $harp.length - 1;
 
-console.log($harp.length);
-console.log(spanIndex);
+
 
 document.addEventListener('keydown', function(clicks) {
-  $keyHold.push(clicks.key);
+  keysCount++;
   if($harp[spanIndex].textContent === clicks.key) {
     $harp[spanIndex].className = 'green';
     spanIndex++;
     $harp[spanIndex].className = 'underline';
-    if (spanIndex === $harp.length) {
-      $tryText.textContent = 'You scored a ' + score + "% !";
+
+    if (spanIndex === $harpLength) {
+      var score = Math.round(($harpLength / keysCount) * 100);
+      $tryText.textContent = 'You scored a '+ score + "% !";
       $try.className = 'on';
     }
 
   } else if ($harp[spanIndex].textContent !== clicks.key) {
     $harp[spanIndex].className = 'red underline';
-
 
   }
 })

@@ -73,3 +73,9 @@ opacity: 70%;
   margin: 0 10px 0 10px;
   position
 }
+
+#inline-block {
+  display: inline-block;
+  width: 15px;
+
+}
