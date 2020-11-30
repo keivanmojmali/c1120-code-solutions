@@ -1,13 +1,12 @@
 /* exported pick */
 
 function pick(source, keys) {
-  var newArray = [source];
-  var hold = [];
-  var newObject;
-  for(var i = 0; i < newArray.length; i++) {
-    if(newArray[i] === keys) {
-      hold.push(newArray[i]);
-    }
+ var hold = [source];
+ for(var key in hold) {
+  if(key === keys) {
+    hold.push(key,value);
   }
-  console.log(hold);
+  return hold;
+ }
+
 }
