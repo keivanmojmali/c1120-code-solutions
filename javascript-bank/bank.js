@@ -28,11 +28,10 @@ Bank.prototype.getAccount = function (number) {
 
 Bank.prototype.getTotalAssets = function () {
   var total = 0;
-  console.log(this.accounts.length);
-  // for (var i = 0; this.accounts.length; i++) {
-  //   console.log('Value of this.accounts[i]',this.accounts[i]);
-  //   // total += this.accounts[i].getBalance();
-  // }
+
+  for (var i = 0; i < this.accounts.length; i++) {
+    total += this.accounts[i].getBalance();
+  }
   if(this.accounts.length === 0) {
     return 0;
   }
