@@ -64,3 +64,7 @@
   font-size: 35px;
   align-self: center;
 }
+
+.actualImage {
+  width: 100%;
+}
