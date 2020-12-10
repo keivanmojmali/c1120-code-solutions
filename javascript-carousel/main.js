@@ -4,19 +4,10 @@ var intervalId = null;
 var $circles = document.querySelectorAll('#circles');
 var $data = document.querySelectorAll('[data-view');
 var $arrow = document.querySelectorAll('#arrow');
+var images = ["./images/001.png", "./images/004.png", "./images/007.png", "./images/025.png", "./images/039.png"]
 
 function renderImage(number) {
-  if(number === 1){
-    $img.src = "./images/001.png";
-  } else if (number === 2) {
-    $img.src = "./images/004.png";
-  } else if(number === 3) {
-    $img.src = "./images/007.png";
-  } else if(number === 4) {
-    $img.src = "./images/025.png";
-  } else if(number === 5) {
-    $img.src = "./images/039.png"
-  }
+  $img.src = images[number - 1];
 }
 
 function controller() {
