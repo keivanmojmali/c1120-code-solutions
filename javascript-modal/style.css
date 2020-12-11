@@ -1,0 +1,97 @@
+.container {
+  background-color: white;
+  height: 100vh;
+  width: 100vh; v
+  position: relative;
+}
+
+.container.on {
+  background-color: #323232;
+  height: 100vh;
+  width: 100vh;
+  position: relative;
+}
+
+.row {
+  width: 100%;
+}
+
+.open-button {
+  color: white;
+  width: 156px;
+  height: 36px;
+  background: #4A4AE9;
+  box-shadow: 1px 0px 1px 0px black;
+  border-style: none;
+  border-radius: 6px;
+  font-size: 19px;
+  margin: 9px;
+}
+
+.modal{
+  background: white;
+  width: 400px;
+  height: 200px;
+  text-align: center;
+  margin: auto;
+  display: none;
+  border-radius: 3px;
+  z-index: 20;
+}
+
+.modal.on{
+  background: white;
+  width: 400px;
+  height: 200px;
+  text-align: center;
+  margin: auto;
+  display: block;
+  border-radius: 3px;
+  z-index: 20;
+  position: fixed;
+  left: 25%;
+  top: 25%;
+}
+
+.modal-div {
+  text-align: center;
+  width: 100vh;
+  height: 100vh;
+  display: none;
+}
+
+.modal-div.on {
+  background-color: black;
+  opacity: 85%;
+  position: absolute;
+  text-align: center;
+  width: 100vh;
+  height: 100vh;
+  display: block;
+}
+
+
+
+.text {
+  color: black;
+  position: relative;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  font-family: arial black;
+}
+
+.text > h2 {
+  font-size: 20px;
+}
+
+.no-button {
+  background-color: #EB5D5D;
+  color: white;
+  width: 85px;
+  height: 40px;
+  box-shadow: 0px 0px 3px 0px black;
+  border-style: none;
+  border-radius: 3px;
+  font-size: 20px;
+
+}

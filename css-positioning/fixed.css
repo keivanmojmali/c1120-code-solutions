@@ -1,0 +1,13 @@
+html {
+  font-size: 22px;
+}
+
+.page-title {
+  font-size: 3rem;
+  text-align: center;
+
+  /* your code here */
+  position: fixed;
+  top: 5.25%;
+  left: 30%;
+}
