@@ -1,16 +1,11 @@
-/* exported omit */
 
-function omit(source, keys) {
-  var source = source;
-  var final = {};
-  console.log(keys.length);
-  for (var i = 0; i < keys.length; i++) {
-    for (var key in source) {
-      if (key !== keys[i]) {
-        console.log('valueeeeee', source[key], key);
-        final[key] = source[key];
-      }
+/* exported omit */
+function omit(source,keys) {
+  var hold = {};
+  for(var check in source) {
+    if(!(keys.includes(check))) {
+      hold[check] = source[check];
     }
   }
-  return final;
+  return hold;
 }
