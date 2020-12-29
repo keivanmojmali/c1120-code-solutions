@@ -2,15 +2,11 @@
 
 
 function omit(source,keys) {
-  var original = source;
-  var final = {};
-  for(var i = 0; i < keys.length; i++) {
-    for(var key in original) {
-      if(key === keys[i]) {
-         delete original[key];
-      }
+  var hold = {};
+  for(var check in source) {
+    if(!(keys.includes(check))) {
+      hold[check] = source[check];
     }
   }
-  final = original;
-  return final;
+  return hold;
 }
