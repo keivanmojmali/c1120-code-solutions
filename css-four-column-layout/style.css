@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  background-color: #F7F8FA;
+}
+
+.row {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: space-between;
+}
+
+.column-full {
+  flex-basis: 100%;
+
+}
+
+.column-fourths {
+  flex-basis: 25%;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.image-100  {
+  width: 100%;
+}
+
+.image-small {
+  width: 20%;
+}
+
+.column-full > h1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.column-fourths h2 {
+  font-size: 12px;
+  font-weight: 950;
+}
+
+.column-fourths p {
+  font-size: 12px;
+}
+
+.margin-between {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.center {
+  text-align: center;
+}

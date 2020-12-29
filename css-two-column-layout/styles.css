@@ -1,0 +1,126 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.row-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  max-width: 1075px;
+  min-width: 900px;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  max-width: 1075px;
+  min-width: 900px;
+  margin-top: 27px;
+
+}
+
+
+.column-small > img {
+  width: 86px;
+  margin-right: 3px;
+}
+
+
+.center {
+  text-align: center;
+}
+
+.margin-top {
+  margin-top: 27px;
+}
+
+.margin-bottom {
+  margin-bottom: 2px;
+}
+
+.middle {
+  width: 100%;
+  display: flex;
+
+}
+
+.pos-start {
+  justify-content: flex-start;
+  padding-left: 59px;
+}
+
+.pos-end {
+  justify-content: flex-end;
+
+}
+
+.column-full {
+  flex-basis: 100%;
+}
+
+.column-small {
+  flex-basis: 5%;
+
+}
+
+.column-large {
+  flex-basis: 55%;
+  padding-top: 8px;
+}
+
+.align-end {
+  align-self: flex-end;
+}
+
+.header {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 700;
+  text-align: center;
+  font-size: 43px;
+}
+
+.p-styling {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5rem;
+
+}
+
+
+.title {
+  font-family: 'Karla';
+  font-style: normal;
+}
+
+.title h2 {
+ font-weight: 700;
+  font-size: 13px;
+}
+
+.p-body {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.button {
+  width: 164px;
+  height: 33px;
+  color: #D14C45;
+  border-style: solid;
+  border-color: #D14C45;
+  background-color: white;
+  font-family: 'Karla';
+  font-size: 14px;
+  font-weight: bold;
+}

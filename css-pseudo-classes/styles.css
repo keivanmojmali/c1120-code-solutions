@@ -1,0 +1,19 @@
+button {
+  width: 200px;
+  height: 60px;
+  font-size: 25px;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+.stripehead {
+  background-color: black;
+  color: white;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: lightgray;
+}
