@@ -2,4 +2,4 @@ function subtract(x,y) {
   return x-y;
 }
 
-module.exports = subtract();
+module.exports = subtract;
