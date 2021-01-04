@@ -1,10 +1,10 @@
 let count = 3;
-const timeoutId = setInterval(timer,1100);
+const id = setInterval(timer,1100);
 
 function timer() {
-  if(count = 0) {
+  if(count === 0) {
     console.log('Blast off!');
-    setInterval(timeoutId);
+    clearInterval(id);
     count = 3;
   } else (
     console.log(count)
