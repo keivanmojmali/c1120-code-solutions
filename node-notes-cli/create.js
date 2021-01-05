@@ -2,7 +2,7 @@ const fs = require('fs');
 let data = require('./data.json');
 let userData = data;
 
-let copyTo = process.argv[2];
+let copyTo = process.argv[3];
 data.notes[data.nextId] = copyTo;
 data.nextId++;
 
