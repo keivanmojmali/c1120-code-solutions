@@ -64,17 +64,23 @@ app.post('/api/notes',(req,res)=>{
 
 
 app.delete('/api/notes/:id',(req,res)=>{
-  const id = parseInt(req.params.id);
+  const id = JSON.parse(req.params.id);
   const currentData = data;
+  const currentDString = JSON.stringify(currentData,null,2);
 
   if(id === undefined || id < 0 || id === NaN) {
-    res.status(400).json({'error': 'id must be a positive integer'})
+    res.status(400).json({'error': 'id must be a positive integer'});
   } else if(!(currentData.notes[id])) {
-    res.status(404).json({'error': 'cannot find note with id ' + id})
+    res.status(404).json({'error': 'cannot find note with id ' + id});
+  } else if(currentData.notes[id]) {
+    delete currentData.notes[id];
+    fs.writeFile('./data.json',currentDString,(err)=>{
+      if (err) {
+        res.status(500).json({ 'error': 'an unexpected error has occured' });
+      }
+    })
+    res.sendStatus(204);
   }
-
-
-
 
 })
 
