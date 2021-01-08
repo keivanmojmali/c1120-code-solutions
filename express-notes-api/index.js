@@ -37,10 +37,30 @@ app.get('/api/notes/:id',(req,res) => {
       }
     }
   }
+})
+
+
+app.post('/api/notes',(req,res)=>{
+  currentData = data;
+  const currentDString = JSON.stringify(currentData,null,2);
+  const content = req.body.content;
+  const currentId = currentData.nextId;
+  const sendToData = {id: currentId, content};
+
+
+  if(content === undefined) {
+    res.status(400).json({'error': "content is a required field"});
+  } else if(content.length > 1) {
+    currentData.notes[currentId] = sendToData;
+    currentData.nextId++;
+    fs.writeFile('./data.json', currentDString,(err) => {
+      if(err) throw err;
+    })
+    res.status(201).json(sendToData);
+  }
 
 
 })
-
 
 
 
