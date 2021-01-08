@@ -23,16 +23,18 @@ app.get('/api/notes', (req, res) => {
 
 app.get('/api/notes/:id',(req,res) => {
   const id = parseInt(req.params.id);
-
-  if(id < 0 || id === NaN || id === undefined) {
+  const currentData = data;
+  console.log(typeof id, id);
+  if(id < 0 || !Number.isInteger(id)) {
+    console.log('made it herererererere');
     res.status(400).json({"error": "id must be a positive integer"});
   } else if (id > 0 && id !== undefined) {
     let dataById = {};
-    if(data.notes[id]) {
-      dataById = data.notes[id];
+    if(currentData.notes[id]) {
+      dataById = currentData.notes[id];
       res.status(200).json(dataById);
     } else if(id > 0 && id !== undefined) {
-      if(!(data.notes[id])) {
+      if(!(currentData.notes[id])) {
         res.status(404).json({'error': 'cannot find note with id ' + id});
       }
     }
@@ -68,7 +70,7 @@ app.delete('/api/notes/:id',(req,res)=>{
   const currentData = data;
   const currentDString = JSON.stringify(currentData,null,2);
 
-  if(id === undefined || id < 0 || id === NaN) {
+  if(!Number.isInteger(id) || id < 0) {
     res.status(400).json({'error': 'id must be a positive integer'});
   } else if(!(currentData.notes[id])) {
     res.status(404).json({'error': 'cannot find note with id ' + id});
@@ -90,7 +92,7 @@ app.put('/api/notes/:id',(req,res)=>{
   const content = req.body.content;
   const currentData = data;
   const currentDString = JSON.stringify(currentData,null,2);
-  if(id < 0 || id === undefined) {
+  if (!Number.isInteger(id) || id < 0) {
     res.status(400).json({'error': 'id must be a positive integer'});
   }  else if(content == undefined) {
     res.status(400).json({'error': 'content is a required field'});
@@ -114,5 +116,5 @@ app.put('/api/notes/:id',(req,res)=>{
 
 
 app.listen(3000, () => {
-  console.log('we live!');
+
 })
