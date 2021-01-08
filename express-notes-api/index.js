@@ -24,9 +24,8 @@ app.get('/api/notes', (req, res) => {
 app.get('/api/notes/:id',(req,res) => {
   const id = parseInt(req.params.id);
   const currentData = data;
-  console.log(typeof id, id);
+
   if(id < 0 || !Number.isInteger(id)) {
-    console.log('made it herererererere');
     res.status(400).json({"error": "id must be a positive integer"});
   } else if (id > 0 && id !== undefined) {
     let dataById = {};
@@ -66,7 +65,7 @@ app.post('/api/notes',(req,res)=>{
 
 
 app.delete('/api/notes/:id',(req,res)=>{
-  const id = req.params.id;
+  const id = parseInt(req.params.id);
   const currentData = data;
   const currentDString = JSON.stringify(currentData,null,2);
 
@@ -88,7 +87,7 @@ app.delete('/api/notes/:id',(req,res)=>{
 
 
 app.put('/api/notes/:id',(req,res)=>{
-  const id = req.params.id;
+  const id = parseInt(req.params.id);
   const content = req.body.content;
   const currentData = data;
   const currentDString = JSON.stringify(currentData,null,2);
