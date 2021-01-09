@@ -3,14 +3,14 @@
 function chunk(array, size) {
   var newArray = [];
   var theArray = array;
+  console.log('value of the array',theArray);
   count = 0;
-  for (var i = count; i < array.length; i = i + size) {
-      newArray.push(array.slice(array[i], count));
+  for (var i = count; i < theArray.length; i = i + size) {
+      newArray.push(theArray.slice(i, size+1));
+    console.log('value of ', theArray.slice(i, size+1))
       count += size;
-      console.log('value of count', count);
-      console.log('value of slice', i, count);
-      console.log('value of slice', array.slice(array[i], count));
-      console.log('value of array', array);
+    console.log('value of i anc ount',i,count);
+
     }
-    return newArray;
+    console.log(newArray);
   }
