@@ -25,17 +25,14 @@ db.query(sql).then(result=>{
 
 app.post('/api/grades',(req,res)=>{
   const content = req.body;
+  const score = parseInt(content.score);
 
-  if(content === undefined) {
-    res.status(400).json({'error': 'Insert values are required'});
-    return;
-  }
-  if (content.course === undefined || content.name == undefined || Number.isInteger(content.score) === false) {
+  if (content.course === undefined || content.name == undefined || Number.isInteger(score) === false) {
       res.status(400).json({'error': 'Please double check input values'});
     }
   const sql = `
-  insert into "grades" ("course","gradeId","name","score")
-  values ('${content.course}','${content.gradeId}','${content.name}','${content.score}')
+  insert into "grades" ("course","name","score")
+  values ('${content.course}','${content.name}','${score}')
   returning *
   `;
 
@@ -46,13 +43,15 @@ app.post('/api/grades',(req,res)=>{
     res.status(500).json({'error': 'something went wrong'})
   ]})
 
-
-
 })
 
 
 
+app.put('/api/grades/:gradeId',(res,req)=>{
 
+
+
+})
 
 
 
