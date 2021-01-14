@@ -32,11 +32,12 @@ app.post('/api/grades',(req,res)=>{
     }
   const sql = `
   insert into "grades" ("course","name","score")
-  values ('${content.course}','${content.name}','${score}')
+  values ($1,$2,$3)
   returning *
   `;
+  values = [content.course, content.name, score]
 
-  db.query(sql).then(result => {
+  db.query(sql,values).then(result => {
     const returnRow = result.rows[0];
     res.status(201).json(returnRow);
   }).catch(err => {[
@@ -82,7 +83,33 @@ app.put('/api/grades/:gradeId',(req,res)=>{
 })
 
 
+app.delete('/api/grades/:gradeId',(req,res)=>{
+  const id = parseInt(req.params.gradeId, 10);
 
+  if(!Number.isInteger(id) || id <= 0) {
+    res.status(400).json({'error': 'Please enter a valid gradeId'});
+    return;
+  }
+
+  const sql = `
+  delete from "grades"
+  where "gradeId" = $1
+  returning *
+  `;
+  const values = [id];
+
+  db.query(sql,values).then(response=>{
+    const responseArray = response.rows[0];
+    if(!responseArray) {
+      res.status(404).json({'error': `Could not find a grade with gradeId ${id}`});
+    } else {
+      console.log('HHHHHHHHHHHHHHHHH',responseArray);
+      res.status(204).json(responseArray);
+    }
+  }).catch(err => {
+    res.status(500).json({'error': 'something went wrong'});
+  })
+})
 
 
 
