@@ -47,11 +47,46 @@ app.post('/api/grades',(req,res)=>{
 
 
 
-app.put('/api/grades/:gradeId',(res,req)=>{
+app.put('/api/grades/:gradeId',(req,res)=>{
+  const id = parseInt(req.params.gradeId,10);
+  const updatedGrade = parseInt(req.body.score,10);
+  const course = req.body.course;
+  const name = req.body.name;
 
+  if(!Number.isInteger(id) || id < 0) {
+    res.status(400).json({'error': 'gradeId must be a positive integer'})
+    return;
+  }
+  if(updatedGrade === undefined || !Number.isInteger(updatedGrade) || updatedGrade < 0) {
+    res.status(400).json({'error': 'Please double check the grade input'})
+  }
 
+  const sql = `
+  update "grades"
+  set "score" = $1, "course" = $3, "name" = $4
+  where "gradeId" = $2
+  returning *
+  `
+  const values = [updatedGrade,id,course,name];
 
+  db.query(sql,values).then(result => {
+    const resultObject = result.rows[0];
+    if(!result.rows) {
+      res.status(404).json({'error': `Cannot find grade with "gradeId" ${id}`});
+    } else {
+      res.status(200).json(resultObject);
+    }
+  }).catch(err=>{
+    res.status(500).json({'error': 'something went wrong'})
+  })
 })
+
+
+
+
+
+
+
 
 
 
