@@ -103,7 +103,6 @@ app.delete('/api/grades/:gradeId',(req,res)=>{
     if(!responseArray) {
       res.status(404).json({'error': `Could not find a grade with gradeId ${id}`});
     } else {
-      console.log('HHHHHHHHHHHHHHHHH',responseArray);
       res.status(204).json(responseArray);
     }
   }).catch(err => {
@@ -118,5 +117,6 @@ app.delete('/api/grades/:gradeId',(req,res)=>{
 
 
 
-app.listen(3000, () =>
-console.log('Live!'));
+app.listen(3000, () => {
+
+});
