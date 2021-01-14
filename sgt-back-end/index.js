@@ -41,7 +41,7 @@ app.post('/api/grades',(req,res)=>{
     const returnRow = result.rows[0];
     res.status(201).json(returnRow);
   }).catch(err => {[
-    res.status(500).json({'error': 'something went wrong'})
+    res.status(500).json({'error': 'An internal server error occured'})
   ]})
 
 })
@@ -59,7 +59,7 @@ app.put('/api/grades/:gradeId',(req,res)=>{
     return;
   }
   if(updatedGrade === undefined || !Number.isInteger(updatedGrade) || updatedGrade < 0) {
-    res.status(400).json({'error': 'Please double check the grade input'})
+    res.status(400).json({'error': 'Please double check score input'})
   }
 
   const sql = `
@@ -78,7 +78,7 @@ app.put('/api/grades/:gradeId',(req,res)=>{
       res.status(200).json(resultObject);
     }
   }).catch(err=>{
-    res.status(500).json({'error': 'something went wrong'})
+    res.status(500).json({ 'error': 'An internal server error occured'})
   })
 })
 
@@ -106,7 +106,7 @@ app.delete('/api/grades/:gradeId',(req,res)=>{
       res.status(204).json(responseArray);
     }
   }).catch(err => {
-    res.status(500).json({'error': 'something went wrong'});
+    res.status(500).json({ 'error': 'An internal server error occured'});
   })
 })
 
