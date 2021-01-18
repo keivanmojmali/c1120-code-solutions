@@ -6,4 +6,4 @@ function CustomButton(props) {
   return <button> Click Me! </button>
 }
 
-ReactDOM.render(CustomButton(),root);
+ReactDOM.render(<CustonButton />,root);
