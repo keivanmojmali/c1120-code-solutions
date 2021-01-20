@@ -6,28 +6,31 @@ export default class StopWatch extends React.Component {
     this.state = { on: false, ticker: 0 };
     this.handleClick = this.handleClick.bind(this);
     let intervalId = null;
+    let iconClass = "fas fa-play";
   };
   handleClick() {
     if (this.state.on === false) {
-      intervalId = setInterval(() => {
+      this.setState({ticker: 0 });
+      this.intervalId = setInterval(() => {
         let newNum = this.state.ticker + 1;
         this.setState({ on: true, ticker: newNum });
       }, 1000);
     } else {
-      this.setState({ on: false, ticker: 0 });
-      clearInterval(intervalId);
+      this.setState({ on: false});
+      clearInterval(this.intervalId);
     }
   };
 
   render() {
-    let iconClass = "fas fa-play";
     if (this.state.on) {
-      iconClass = "fas fa-pause"
+     this.iconClass = "fas fa-pause"
+    } else {
+      this.iconClass = "fas fa-play";
     }
     return (
-      <div onClick={this.handleClick}>
-        <div className="circle">
-          <h1>{this.count}</h1>
+      <div className="center" onClick={this.handleClick}>
+        <div className="circle small-margin">
+          <h1 className="color">{this.state.ticker}</h1>
         </div>
         <i className={this.iconClass}></i>
       </div>

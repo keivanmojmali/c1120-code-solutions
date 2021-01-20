@@ -5,4 +5,4 @@ const $root = document.getElementById('root');
 
 
 
-ReactDOM(<StopWatch />,$root);
+ReactDOM.render(<StopWatch />,$root);

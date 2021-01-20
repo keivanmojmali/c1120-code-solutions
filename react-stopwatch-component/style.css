@@ -2,5 +2,24 @@
   height: 100px;
   width: 100px;
   border-radius: 50%;
-  border: solid, 2px, black;
+  border: 2pt solid black;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color {
+  color: black;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.small-margin {
+  margin: 5px;
 }
