@@ -1,0 +1,29 @@
+.display-none {
+  display: none;
+}
+
+
+.list {
+  text-decoration: none;
+  list-style: none;
+  font-size: 2rem;
+  font-family: Helvetica, sans-serif;
+  background-color: lightgray;
+  border: 2px solid black;
+  margin: .25px;
+  padding: 3px;
+  font-weight: 300px;
+}
+
+
+.border {
+  border: 2px solid black;
+}
+
+.margin-small {
+  margin: .25px;
+}
+
+.list-none {
+  list-style: none;
+}
