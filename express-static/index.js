@@ -5,7 +5,7 @@ const app = express();
 
 const join = path.join(__dirname,'public');
 const eStatic = express.static(join)
-app.use(static);
+app.use(eStatic);
 
 
 app.listen(3000, ()=> {
