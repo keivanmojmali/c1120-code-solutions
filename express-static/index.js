@@ -4,7 +4,7 @@ const app = express();
 
 
 const join = path.join(__dirname,'public');
-const static = express.static(join)
+const eStatic = express.static(join)
 app.use(static);
 
 
