@@ -20,11 +20,11 @@ export default class Accordian extends React.Component {
         )
       });
   };
-  handleChange(event) {
+  handleChange(id) {
     if(this.state.display === event) {
       this.setState({display: null})
     } else {
-    this.setState({display: event});
+    this.setState({display: id});
     }
   };
   render() {
