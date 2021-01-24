@@ -41,7 +41,11 @@ export default class Carousel extends React.Component {
         this.setState({ displayIndex: indexMinus, displayId: newId });
       }
     } else {
-      console.log('made it here');
+     let selectImg = this.props.array.findIndex((pokemon)=>{
+       return pokemon.id === direction;
+     });
+     let selectId = this.props.array[selectImg].id;
+     this.setState({displayIndex: selectImg, displayId: selectId});
     }
   };
   renderCircles(){
