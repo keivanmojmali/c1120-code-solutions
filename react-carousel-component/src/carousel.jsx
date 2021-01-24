@@ -12,10 +12,14 @@ export default class Carousel extends React.Component {
     this.currentPath = null;
     this.newId = null;
     this.handleClick = this.handleClick.bind(this);
+    this.startInterval = this.startInterval.bind(this);
     this.circleClass = "far fa-circle m-2";
     this.circles = null;
+    this.intervalId = null;
+
   };
   handleClick(direction) {
+
     if (direction === 'back' || direction === 'forward') {
       if (direction === 'forward') {
         let max = this.props.array.length - 1;
@@ -47,6 +51,7 @@ export default class Carousel extends React.Component {
      let selectId = this.props.array[selectImg].id;
      this.setState({displayIndex: selectImg, displayId: selectId});
     }
+
   };
   renderCircles(){
     this.circles = this.props.array.map((item)=>{
@@ -58,6 +63,9 @@ export default class Carousel extends React.Component {
         <li onClick={()=>{this.handleClick(item.id)}}><i value={item.id} className={iconClass}></i></li>
       )
     })
+  };
+  startInterval(){
+    this.intervalId = setInterval(this.handleClick('forward'), 3000);
   }
 
   render() {
