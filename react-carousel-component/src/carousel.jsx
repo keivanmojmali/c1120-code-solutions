@@ -15,32 +15,32 @@ export default class Carousel extends React.Component {
     this.circleClass = "far fa-circle m-2";
     this.circles = null;
   };
-  handleClick(direction){
-    console.log(direction,this.state.displayIndex);
+  handleClick(direction) {
+    console.log(direction, this.state.displayIndex);
     console.log(this.props.array.length);
-    if(direction === 'back' || direction === 'forward'){
-      if(direction === 'forward'){
-        let max = this.props.array.length -1;
+    if (direction === 'back' || direction === 'forward') {
+      if (direction === 'forward') {
+        let max = this.props.array.length - 1;
         if (this.state.displayIndex === max) {
-          let maxIndex = this.props.array.length -1;
           let zeroId = this.props.array[0].id;
           this.setState({ displayIndex: 0, displayId: zeroId });
           return;
         };
-        let idPlus = this.state.displayId + 1;
-        let indexPlus = this.state.displayIndex +1;
-        this.setState({displayIndex: indexPlus, displayId: idPlus});
-      } else {
-        if(this.state.displayIndex === 0){
+        let idPlus = this.props.array[this.state.displayIndex + 1].id;
+        let indexPlus = this.state.displayIndex + 1;
+        console.log('HHHHHH',idPlus, indexPlus)
+        this.setState({ displayIndex: indexPlus, displayId: idPlus });
+      }
+      else {
+        if (this.state.displayIndex === 0) {
           let maxIndex = this.props.array.length - 1;
           let maxId = this.props.array[maxIndex].id;
-          this.setState({ displayIndex: maxIndex, displayId: maxId});
+          this.setState({ displayIndex: maxIndex, displayId: maxId });
           return;
         };
-        let newId = this.props.array[this.state.props.displayIndex -1].id;
-        let idPlus = this.state.displayId - 1 ;
-        let indexPlus = this.state.displayIndex - 1;
-        this.setState({ displayIndex: indexPlus, displayId: newId});
+        let newId = this.props.array[this.props.displayIndex - 1].id;
+        let indexMinus = this.state.displayIndex - 1;
+        this.setState({ displayIndex: indexMinus, displayId: newId });
       }
     } else {
       console.log('made it here');
@@ -48,7 +48,7 @@ export default class Carousel extends React.Component {
   };
   renderCircles(){
     this.circles = this.props.array.map((item)=>{
-      const iconClass = 'far fa-circle';
+      let iconClass = 'far fa-circle';
       if(item.id === this.state.displayId){
         iconClass = 'fas fa-circle';
       }
