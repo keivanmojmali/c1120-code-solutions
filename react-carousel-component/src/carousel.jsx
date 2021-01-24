@@ -16,15 +16,20 @@ export default class Carousel extends React.Component {
     this.circles = null;
   };
   handleClick(direction){
+    if(this.state.displayIndex = this.props.array.length){
+      let maxIndex = this.props.array.length;
+      let maxId = this.props.array[maxIndex];
+      this.setState({displayIndex: maxIndex, displayId: maxId});
+    }
     if(direction === 'back' || direction === 'forward'){
       if(direction === 'forward'){
         let idPlus = this.state.displayId + 1;
         let indexPlus = this.state.displayIndex +1;
-        this.setState = ({displayIndex: indexPlus, displayId: idPlus});
+        this.setState({displayIndex: indexPlus, displayId: idPlus});
       } else {
         let idPlus = this.state.displayId - 1 ;
         let indexPlus = this.state.displayIndex - 1;
-        this.setState = ({ displayIndex: indexPlus, displayId: idPlus });
+        this.setState({ displayIndex: indexPlus, displayId: idPlus });
       }
     } else {
       console.log('made it here');
