@@ -17,7 +17,15 @@ export default class Carousel extends React.Component {
   };
   handleClick(direction){
     if(direction === 'back' || direction === 'forward'){
-
+      if(direction === 'forward'){
+        let idPlus = this.state.displayId + 1;
+        let indexPlus = this.state.displayIndex +1;
+        this.setState = ({displayIndex: indexPlus, displayId: idPlus});
+      } else {
+        let idPlus = this.state.displayId - 1 ;
+        let indexPlus = this.state.displayIndex - 1;
+        this.setState = ({ displayIndex: indexPlus, displayId: idPlus });
+      }
     } else {
       console.log('made it here');
     }
