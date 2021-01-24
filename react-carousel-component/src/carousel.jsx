@@ -16,8 +16,6 @@ export default class Carousel extends React.Component {
     this.circles = null;
   };
   handleClick(direction) {
-    console.log(direction, this.state.displayIndex);
-    console.log(this.props.array.length);
     if (direction === 'back' || direction === 'forward') {
       if (direction === 'forward') {
         let max = this.props.array.length - 1;
@@ -30,16 +28,16 @@ export default class Carousel extends React.Component {
         let indexPlus = this.state.displayIndex + 1;
         console.log('HHHHHH',idPlus, indexPlus)
         this.setState({ displayIndex: indexPlus, displayId: idPlus });
-      }
-      else {
+      } else {
         if (this.state.displayIndex === 0) {
           let maxIndex = this.props.array.length - 1;
           let maxId = this.props.array[maxIndex].id;
           this.setState({ displayIndex: maxIndex, displayId: maxId });
           return;
         };
-        let newId = this.props.array[this.props.displayIndex - 1].id;
+        let newId = this.props.array[this.state.displayIndex - 1].id;
         let indexMinus = this.state.displayIndex - 1;
+        console.log('adadada',newId,indexMinus)
         this.setState({ displayIndex: indexMinus, displayId: newId });
       }
     } else {
@@ -68,7 +66,7 @@ export default class Carousel extends React.Component {
           <div onClick={() => {this.handleClick('back')}} className="col d-flex justify-content-center align-items-center">
             <i className="fas fa-chevron-left"></i>
           </div>
-          <div className="col d-flex justify-content-center align-items-center p-3">
+          <div className="col d-flex justify-content-center align-items-center p-3 image-container">
             <img className="img-fluid" src={this.currentPath} alt="Pokemon Image"/>
           </div>
           <div onClick={() => { this.handleClick('forward')}} className="col d-flex justify-content-center align-items-center">

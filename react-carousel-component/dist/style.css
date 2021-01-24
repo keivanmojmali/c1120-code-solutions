@@ -7,3 +7,9 @@
 .min-width {
   min-width: 650px;
 }
+
+
+.image-container {
+  height: 80vh;
+  width: 80vh;
+}
