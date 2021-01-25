@@ -1,0 +1,31 @@
+.display-none {
+  display: none;
+}
+
+.black {
+  color: black;
+}
+
+.menu {
+  width: 30vh;
+  height: 100vh;
+}
+
+.shade {
+  width: 70vh;
+  height: 100vh;
+  background-color: gray;
+}
+
+.flex {
+  display: flex;
+
+}
+
+.links {
+  list-style: none;
+  text-decoration: none;
+  color: black;
+  font-size: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
