@@ -1,0 +1,17 @@
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.margin-five {
+  margin: 5px
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
