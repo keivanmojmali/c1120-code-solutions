@@ -6,13 +6,12 @@ import React from 'react';
 export default class Carousel extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {displayIndex: 0, displayId: null};
+    this.state = {displayIndex: 0, displayId: this.props.array[0].id};
     this.imageSrc = null;
     this.newImg = 0;
     this.currentPath = null;
     this.newId = null;
     this.handleClick = this.handleClick.bind(this);
-    this.startInterval = this.startInterval.bind(this);
     this.circleClass = "far fa-circle m-2";
     this.circles = null;
     this.intervalId = null;
@@ -30,7 +29,6 @@ export default class Carousel extends React.Component {
         };
         let idPlus = this.props.array[this.state.displayIndex + 1].id;
         let indexPlus = this.state.displayIndex + 1;
-        console.log('HHHHHH',idPlus, indexPlus)
         this.setState({ displayIndex: indexPlus, displayId: idPlus });
       } else {
         if (this.state.displayIndex === 0) {
@@ -41,7 +39,7 @@ export default class Carousel extends React.Component {
         };
         let newId = this.props.array[this.state.displayIndex - 1].id;
         let indexMinus = this.state.displayIndex - 1;
-        console.log('adadada',newId,indexMinus)
+
         this.setState({ displayIndex: indexMinus, displayId: newId });
       }
     } else {
@@ -64,10 +62,12 @@ export default class Carousel extends React.Component {
       )
     })
   };
-  startInterval(){
-    this.intervalId = setInterval(this.handleClick('forward'), 3000);
-  }
-
+  componentDidMount(){
+  this.intervalId = setInterval(()=>{this.handleClick('forward')}, 3000);
+  };
+  componentWillUnmount(){
+    clearInterval(this.intervalId);
+  };
   render() {
     this.renderCircles();
     const current = this.state.displayIndex;
