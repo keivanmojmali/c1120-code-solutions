@@ -24,29 +24,24 @@ export default class Carousel extends React.Component {
   };
   handleBack(){
     if(this.state.displayIndex === 0){
-      let last = this.state.displayIndex.length -1;
+      let last = this.props.array.length -1;
       this.setState({displayIndex:last});
+    }else {
+      let newNum = this.state.displayIndex -1;
+      this.setState({displayIndex:newNum});
     }
   };
   goDirect(event){
-    const id = event.target;
-    console.log('event.target',id);
-    console.log('event.tar.value',id)
-    let newIndex = this.props.array.findIndex((item)=>{
-      console.log(item.id,id)
-      return item.id === id;
-    })
-    console.log(newIndex);
-    this.setState({displayIndex:newIndex});
+    this.setState({displayIndex:event});
   };
   renderCircles(){
-     return this.props.array.map((item)=>{
+     return this.props.array.map((item, index)=>{
       let iconClass = 'far fa-circle';
       if(item.id === this.props.array[this.state.displayIndex].id){
         iconClass = 'fas fa-circle';
       }
       return (
-        <li onClick={this.goDirect}><i value={item.id} className={iconClass}></i></li>
+        <li onClick={()=>this.goDirect(index)}><i className={iconClass}></i></li>
       )
     })
   };
