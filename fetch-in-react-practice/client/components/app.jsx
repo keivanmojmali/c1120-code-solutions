@@ -33,7 +33,7 @@ export default class App extends React.Component {
     })
       .then(response => response.json())
       .then(todos => {
-        let newList = this.state.todos;
+        let newList = [...this.state.todos];
         newList.push(todos);
         this.setState({ newList });
       }).catch(err => console.error(err));
