@@ -1,0 +1,6 @@
+User can view home page - this is possible from the redner method of the APP class.
+User can attempt to log in - they will be denied from the fetch function inside of the Auth form.
+User can create a new Log in - using the render method of the AuthForm class
+Users information gets saved to state in AuthForm then that is imported to Auth where the user is given an token through the Authpage class
+User can sign out - using handleSignOut that is transferred information from AppContext
+User can log out and log back in - because of the post to db in the index.js
