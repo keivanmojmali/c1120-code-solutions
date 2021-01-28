@@ -29,7 +29,7 @@ export default class AuthPage extends React.Component {
               action={route.path}
               onSignIn={handleSignIn} />
           </div>
-        </div>s
+        </div>
       </div>
     );
   }
