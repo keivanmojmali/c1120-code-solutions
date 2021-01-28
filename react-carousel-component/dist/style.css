@@ -1,0 +1,15 @@
+.carousel {
+  width: 100vh;
+  border: 3px solid black;
+}
+
+
+.min-width {
+  min-width: 650px;
+}
+
+
+.image-container {
+  height: 80vh;
+  width: 80vh;
+}
