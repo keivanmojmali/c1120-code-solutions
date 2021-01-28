@@ -1,0 +1,7 @@
+The ReactDOM renders our App onto the screen.
+The app uses the renderPage method to determine which page to show – if the path is set to ‘ ‘ it will show the home page – if not it will send you to sign in and sign up
+Then you can use the sign in form made by the Auth class to sign in.
+The log in or sign up info is sent to handle submit method of the AUTH Form. That will either PSOT your info or get your user info depending on sign up or sign in that you chose.
+The log in info is saved to state and also saved to result.token and result.user which is used to remmeber their information when they refresh or leave the page. The token is saved to localStorage using the get and set items
+ The main page is defined in the home page class and rendered in our App class.
+The sign out function uses the handleSignOut function which is transferred from react context. It uses remove item from localStorage to take it away from you and then re renders the page with empty string hash and that takes you to log in
