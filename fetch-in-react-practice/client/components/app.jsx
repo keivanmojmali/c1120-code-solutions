@@ -40,36 +40,35 @@ export default class App extends React.Component {
   }
 
   toggleCompleted(todoId) {
-    let targetObject = null;
 
-    const findTarget = this.state.todos.map((todo) => {
-      if (todo.todoId === todoId) {
-        if (todo.isCompleted === false) {
-          todo.isCompleted = true;
-          targetObject = todo;
-          return todo;
-        } else {
-          todo.isCompleted = false;
-          targetObject = todo;
-          return todo;
-        }
+    const newIndex = this.state.todos.findIndex((item)=>{
+      return item.todoId === todoId;
+    });
+
+    let sendObject = { isCompleted: null };
+
+    let pullObject = () =>{
+      if(this.state.todos[newIndex].isCompleted) {
+        sendObject = { isCompleted: false };
       } else {
-        return todo;
+        sendObject = { isCompleted: true };
       }
-    })
+    };
+    pullObject()
 
-    let targetObjectIsCompleted = { isCompleted: targetObject.isCompleted };
 
     fetch(`/api/todos/${todoId}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(targetObjectIsCompleted),
+      body: JSON.stringify(sendObject),
     })
-      .then(response => response.json(targetObject))
+      .then(response => response.json(response))
       .then(todos => {
-        this.setState({ findTarget })
+    const newTodoArray = [...this.state.todos];
+      newTodoArray.splice(newIndex,1,todos);
+    this.setState({'todos': newTodoArray });
       })
       .catch(err => console.error(err))
 
